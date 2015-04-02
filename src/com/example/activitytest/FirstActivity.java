@@ -5,6 +5,7 @@ import com.example.activitytest.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,14 +29,26 @@ public class FirstActivity extends Activity {
 				//				Toast.makeText(FirstActivity.this, "You clicked Button 1", Toast.LENGTH_SHORT).show();
 //				finish();
 				Intent intent=new Intent(FirstActivity.this,SecondActivity.class);
-				intent.putExtra("extra_data", data);
+				startActivityForResult(intent, 1);
+//				intent.putExtra("extra_data", data);
 //				Intent intent=new Intent("com.example.activitytest.ACTION_START");
 //				intent.addCategory("com.example.activitytest.MY_CATEGORY");
 //				Intent intent=new Intent(Intent.ACTION_DIAL);
 //				intent.setData(Uri.parse("tel:10086"));
-				startActivity(intent);
+//				startActivity(intent);
 			}
 		});
+	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+//		Log.d("request11", requestCode+" "+resultCode);
+//		super.onActivityResult(requestCode, resultCode, data);
+		if(resultCode==RESULT_OK)
+		{
+			String returnedData=data.getStringExtra("data_return");
+			Log.d("FirstActivity",returnedData);
+		}
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
