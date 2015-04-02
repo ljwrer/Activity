@@ -1,0 +1,5 @@
+<resources>
+
+    <string name="app_name">Activity Test</string>
+	<string name="first_layout_button_1">Button 1</string>
+</resources>
