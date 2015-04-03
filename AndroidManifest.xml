@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity 
-            android:name="com.example.activitytest.SecondActivity">
+            android:name="com.example.activitytest.SecondActivity"
+            android:launchMode="singleInstance">
             <intent-filter >
                 <action android:name="com.example.activitytest.ACTION_START"/>
                 <category android:name="android.intent.category.DEFAULT"/>
